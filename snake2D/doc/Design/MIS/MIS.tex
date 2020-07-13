@@ -1,0 +1,624 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{fullpage}
+\usepackage[round]{natbib}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\newcounter{acnum}
+\newcommand{\actheacnum}{AC\theacnum}
+\newcommand{\acref}[1]{AC\ref{#1}}
+
+\newcounter{ucnum}
+\newcommand{\uctheucnum}{UC\theucnum}
+\newcommand{\uref}[1]{UC\ref{#1}}
+
+\newcounter{mnum}
+\newcommand{\mthemnum}{M\themnum}
+\newcommand{\mref}[1]{M\ref{#1}}
+
+\title{SE 3XA3: Module Interface Specification\\\textbf{Snake Game Remake}}
+
+\author{Team \#, 302, Team Name: 404
+		\\ Student: Shunbo Cui	    cuis13
+		\\ Student: Xiangxin Kong	kongx9
+		\\ Student: Shuo Zhang	    zhans18
+}
+
+\date{March 13, 2020}
+
+\begin{document}
+
+\maketitle
+
+\begin{table}[hp]
+\caption{Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{llX}
+\toprule
+\textbf{Date} & \textbf{Members} & \textbf{Change}\\
+\midrule
+March 12, 2020 & Shuo Zhang, Xiangxin Kong, Shunbo Cui & Create the MIS\\
+... & ... & ...\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\section {Map Module}
+
+\subsection*{Module}
+
+Map
+
+\subsection* {Uses}
+
+None
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+
+\textbf{map1} : \{(227, 351, 16, 16),
+ (243, 351, 16, 16),
+ (259, 351, 16, 16),
+ (275, 351, 16, 16),
+ (291, 351, 16, 16),
+ (307, 351, 16, 16),
+ (323, 351, 16, 16),
+ (339, 351, 16, 16),
+ (355, 351, 16, 16),
+ (371, 351, 16, 16),
+ (387, 351, 16, 16),
+ (403, 351, 16, 16),
+ (419, 351, 16, 16),
+ (435, 351, 16, 16),
+ (451, 351, 16, 16),
+ (819, 351, 16, 16),
+ (803, 351, 16, 16),
+ (787, 351, 16, 16),
+ (771, 351, 16, 16),
+ (755, 351, 16, 16),
+ (739, 351, 16, 16),
+ (723, 351, 16, 16),
+ (707, 351, 16, 16),
+ (691, 351, 16, 16),
+ (675, 351, 16, 16),
+ (659, 351, 16, 16),
+ (643, 351, 16, 16),
+ (627, 351, 16, 16),
+ (611, 351, 16, 16),
+ (595, 351, 16, 16),
+ (515, 127, 16, 16),
+ (515, 143, 16, 16),
+ (515, 159, 16, 16),
+ (515, 175, 16, 16),
+ (515, 191, 16, 16),
+(515, 207, 16, 16),
+ (515, 223, 16, 16),
+ (515, 239, 16, 16),
+ (515, 255, 16, 16),
+ (515, 271, 16, 16),
+ (515, 575, 16, 16),
+ (515, 559, 16, 16),
+ (515, 543, 16, 16),
+ (515, 527, 16, 16),
+ (515, 511, 16, 16),
+ (515, 495, 16, 16),
+ (515, 479, 16, 16),
+ (515, 463, 16, 16),
+ (515, 447, 16, 16),
+ (515, 431, 16, 16)\} \\\\
+ \textbf{map2} : (227, 351, 16, 16),
+ (243, 351, 16, 16),
+ (259, 351, 16, 16),
+ (275, 351, 16, 16),
+ (291, 351, 16, 16),
+ (819, 351, 16, 16),
+ (803, 351, 16, 16),
+ (787, 351, 16, 16),
+ (771, 351, 16, 16),
+ (755, 351, 16, 16),
+ (483, 127, 16, 16),
+ (483, 143, 16, 16),
+ (483, 159, 16, 16),
+ (483, 175, 16, 16),
+ (483, 191, 16, 16),
+ (483, 207, 16, 16),
+ (483, 223, 16, 16),
+ (483, 239, 16, 16),
+ (483, 255, 16, 16),
+ (483, 271, 16, 16),
+ (483, 287, 16, 16),
+ (483, 303, 16, 16),
+ (483, 319, 16, 16),
+ (483, 335, 16, 16),
+ (483, 351, 16, 16),
+ (483, 367, 16, 16),
+ (483, 383, 16, 16),
+ (483, 399, 16, 16),
+ (483, 415, 16, 16),
+ (483, 431, 16, 16),
+ (483, 447, 16, 16),
+ (483, 463, 16, 16),
+ (483, 479, 16, 16),
+ (547, 575, 16, 16),
+ (547, 559, 16, 16),
+ (547, 543, 16, 16),
+ (547, 527, 16, 16),
+ (547, 511, 16, 16),
+ (547, 495, 16, 16),
+ (547, 479, 16, 16),
+ (547, 463, 16, 16),
+ (547, 447, 16, 16),
+ (547, 431, 16, 16),
+ (547, 415, 16, 16),
+ (547, 399, 16, 16),
+ (547, 383, 16, 16),
+ (547, 367, 16, 16),
+ (547, 351, 16, 16),
+ (547, 335, 16, 16),
+ (547, 319, 16, 16),
+ (547, 303, 16, 16),
+ (547, 287, 16, 16),
+ (547, 271, 16, 16),
+ (547, 255, 16, 16),
+ (547, 239, 16, 16),
+ (547, 223, 16, 16)\\\\
+ 
+
+
+\subsubsection* {Exported Types}
+
+None
+
+\subsubsection* {Exported Access Programs}
+
+None
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+None
+
+\subsubsection* {State Invariant}
+
+None
+
+\section{Snake Module}
+
+Snake
+
+\subsection* {Uses}
+
+None
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Types}
+
+None
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+new snake &  & snake & \\
+\hline
+setDirectione & $\mathbb{Z}$ &  & \\
+\hline
+eat &   &  & \\
+\hline
+move &   &  & \\
+\hline
+getSnakeBody &  & set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$)  & \\
+\hline
+getLength &  & $\mathbb{Z}$  & \\
+\hline
+getDirection &  & $\mathbb{Z}$  & \\
+\hline
+getHead &  & ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$)  & \\
+\hline
+\end{tabular}
+
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+snakebody: set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$)\\
+direction: {$\mathbb{Z}$}\\
+
+\subsubsection* {State Invariant}
+
+DEFAULT\_SNAKE\_LENGTH = 5\\
+DEFAULT\_SNAKE\_DIRECTION = 3
+
+\subsubsection* {Assumptions}
+\begin{itemize}
+\item The constructor snake is called for each object instance before any other
+access routine is called for that object.  The constructor cannot be called on
+an existing object.
+\item direction can only be 0, 1, 2 or 3.
+\end{itemize}
+
+\subsubsection* {Access Routine Semantics}
+
+snake():
+\begin{itemize}
+\item transition: direction := DEFAULT\_SNAKE\_DIRECTION, snakebody := ($\forall i : 0 \leq i \leq$ DEFAULT\_SNAKE\_LENGTH $|$ (355 - i * 16, 191, 16, 16) $\in$ snakebody)
+\item output: $\mathit{out} := \mathit{self}$
+\item exception: None
+\end{itemize}
+
+\noindent setDirection(dir):
+\begin{itemize}
+\item transition: ((direction $\geq$ 3 $\land$ dir $<$ 3) $\lor$ (direction $\leq$ 2 $\land$ dir $>$ 2)) $\implies$ direction := dir
+\item ouput := None
+\item exception: None\\
+\end{itemize}
+
+\noindent eat():
+\begin{itemize}
+\item transition: snakebody := snakebody + last ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$) element of snakebody before the move [$\leftarrow$ \textit{this element is cut off from the snakebody after every move() operation}]
+\item ouput := None
+\item exception: None\\
+\end{itemize}
+
+\noindent getSnakeBody():
+\begin{itemize}
+\item transition: None
+\item ouput := snakebody
+\item exception: None\\
+\end{itemize}
+
+\noindent getLength():
+\begin{itemize}
+\item transition: None
+\item ouput := size of snakebody
+\item exception: None\\
+\end{itemize}
+
+\noindent getDirection():
+\begin{itemize}
+\item transition: None
+\item ouput := direction
+\item exception: None\\
+\end{itemize}
+
+\noindent getHead():
+\begin{itemize}
+\item transition: None
+\item ouput := first ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$) element of snakebody
+\item exception: None\\
+\end{itemize}
+
+\noindent move():
+\begin{itemize}
+\item transition: ($\forall$ i $\in$ $\mathbb{Z} |$ size of snakebody $\geq$ i $\geq$ 1  : the ith element of snakebody := the (i-1)th element of snakebody ) \textbf{,} ((direction = 1 $\implies$ decreaseY()) $\lor$ (direction = 2 $\implies$ increaseY()) $\lor$ (direction = 3 $\implies$ increaseX()) $\lor$ (direction = 4 $\implies$ decreaseX()))
+\item ouput := None
+\item exception: None\\
+\end{itemize}
+
+\subsection*{Local Functions}
+increaseY: set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}) \rightarrow$ set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$)\\
+\noindent increaseY() $\equiv$ 1st element snakebody := ($\mathbb{R}, \mathbb{R}+16, \mathbb{R}, \mathbb{R}$) of 2nd element of snakebody\\\\
+decreaseY: set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}) \rightarrow$ set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$)\\
+\noindent decreaseY() $\equiv$ 1st element snakebody := ($\mathbb{R}, \mathbb{R}-16, \mathbb{R}, \mathbb{R}$) of 2nd element of snakebody\\\\
+decreaseX: set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}) \rightarrow$ set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$)\\
+\noindent decreaseX() $\equiv$ 1st element snakebody := ($\mathbb{R}-16, \mathbb{R}, \mathbb{R}, \mathbb{R}$) of 2nd element of snakebody\\\\
+increaseX: set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}) \rightarrow$ set of ($\mathbb{R}, \mathbb{R}, \mathbb{R}, \mathbb{R}$)\\
+\noindent increaseX() $\equiv$ 1st element snakebody := ($\mathbb{R}+16, \mathbb{R}, \mathbb{R}, \mathbb{R}$) of 2nd element of snakebody\\
+
+\section{Main Module}
+
+Main Screen
+
+\subsection* {Uses}
+
+Game board
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Types}
+
+None
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+Main &  &  &\\
+\hline
+new MainScreen &  & MainScreen & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+\textit{gameboard} $\in$ GameBoardPanel
+
+\subsubsection* {Environment Variables}
+
+keyboard button: up, down, left ,right, space, esc\\
+mouse: leftclick
+\subsubsection* {State Invariant}
+
+\textit{levelStrings} = \{ "Easy", "Normal", "Hard" \}
+
+\subsubsection* {Assumptions}
+Main() will run before any other programs.
+
+\subsubsection* {Access Routine Semantics}
+Main():
+\begin{itemize}
+\item transition: call Mainscreen()
+\item output: None
+\item exception: None
+\end{itemize}
+
+\noindent Mainscreen():
+\begin{itemize}
+\item transition: generate a visible window with level selection buttons, a special mode selection button and snake color selection buttons. (select "Easy" $\implies$ call GameBoardPanel(1)) $\lor$ (select "Normal" $\implies$ call GameBoardPanel(2)) $\lor$ (select "Hard" $\implies$ call GameBoardPanel(3)) 
+\item ouput := $\mathit{out} := \mathit{self}$
+\item exception: None\\
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%main module end here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%sound
+\section{Sound Module}
+
+SoundManger
+
+\subsection* {Uses}
+
+None
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Types}
+Files:
+bgm\_file = start.wav;
+eatfood\_file = food.wav;
+eatitem\_file = item.wav;
+collide\_file = collision.wav.
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+new SoundManger & String & SoundManger &\\
+\hline
+startSound &  &  & \\
+\hline
+pauseSound &  &  & \\
+\hline
+stopSound &  &  & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+None
+
+\subsubsection* {Environment Variables}
+
+\subsubsection* {State Invariant}
+
+None
+
+\subsubsection* {Assumptions}
+SoundManger will run before any other programs in this module.
+
+\subsubsection* {Access Routine Semantics}
+SoundManger(soundFilePath):
+\begin{itemize}
+\item transition: Open the sound effect that is stored at path \textit{soundFilePath} and ready to play. 
+\item ouput := $\mathit{out} := \mathit{self}$
+\item exception: None
+\end{itemize}
+
+\noindent startSound():
+\begin{itemize}
+\item transition: play the sound effect. 
+\item ouput : None
+\item exception: None\\
+\end{itemize}
+
+\noindent pauseSound():
+\begin{itemize}
+\item transition: suspend the sound effect. 
+\item ouput : None
+\item exception: None\\
+\end{itemize}
+
+\noindent stopSound():
+\begin{itemize}
+\item transition: terminate the sound effect. 
+\item ouput : None
+\item exception: None\\
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+%以下夹在gamboard module 里
+
+
+%%%%%%%%%%%%%%%%%%
+
+
+
+\section{MIS of Food and Item Module}
+		\subsection{Interface Syntax}
+		\subsubsection{Exported Access Programs}
+		\begin{tabular}[pos]{|c|c|c|c|}
+			\hline
+			\textbf{Name}& \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\ \hline
+			generateFood &- & - & - \\ \hline
+			getFood & -  &(\mathbb{R}, \mathbb{R})& - \\ \hline
+			generateItem & - & - & - \\ \hline
+			getItem & - & (\mathbb{R}, \mathbb{R})& - \\ \hline
+			
+		\end{tabular}
+		
+		\subsection{Interface Semantics}
+		\subsubsection{State Variables}
+		food: (\mathbb{R}, \mathbb{R}) - represents the current location of the food\\
+		item: (\mathbb{R}, \mathbb{R}) - represents the current location of the item
+		
+		\subsubsection{Assumptions}
+		Other modules always call generateFood() before calling getFood() \\ 
+		Other modules always call generateItem() before calling getItem() \\ 
+		
+		\subsubsection{Access Program Semantics}
+		generateFood():
+		
+        transition: item:=pair of random integers from 0 to 227\\
+		\\
+		generateItem():
+		
+        transition: food:=pair of random integers from 0 to 227\\
+        \\
+		getFood():
+		
+		Output:= food\\
+		\\
+		getItem():
+		
+
+		Output:=item
+		\\
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{GameBoard Module}
+\subsection* {Uses}
+Snake, Food and Item, Sound, Map
+\subsection* {Syntax}
+\subsubsection* {Exported Constants}
+%%%%%%%%%%%%%
+		\subsection{Interface Syntax}
+		\subsubsection{Exported Access Programs}
+		\begin{tabular}[pos]{|c|c|c|c|}
+			\hline
+			\textbf{Name}& \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\ \hline
+			 keyPressed & event & - & - \\ \hline
+			 InputManger & event  & - & - \\ \hline
+			 checkCollision & -  & $\mathbb{B}$ & - \\ \hline
+			 drawMap & -  & - & - \\ \hline
+			 drawSnake  & snake  & - & - \\ \hline
+			 DrawSnakeFood & food  & - & - \\ \hline
+			 DrawStatusbar & -  & - & - \\ \hline
+			
+		\end{tabular}
+		
+		
+		\subsection{Interface Semantics}
+		\subsubsection{State Variables}
+		food: ($\mathbb{R}, \mathbb{R}$) - represents the current location of the food\\
+		item: ($\mathbb{R}, \mathbb{R}$) - represents the current location of the item\\
+		isGameOver:$\mathbb{B}$ - repersents is the game over
+		playerScore:$\mathbb{R}$ -repersents the current score
+        snake: SNAKE- repersents the current snake
+		
+		\subsubsection{Assumptions}
+		Variables should be set before trying to access them.\\
+		If no event is chosen, checkEvent returns a default value 0\\
+        If currState is 0, drawInterface does not change\\
+        
+		\subsubsection{Access Program Semantics}
+
+		
+	
+InputManger(gb):
+\begin{itemize}
+\item transition: gameboard := gb
+\item output: $\mathit{out} := \mathit{self}$
+\item exception: None
+\end{itemize}
+
+\noindent keyPressed(e):
+\begin{itemize}
+\item transition: (e = up button $\implies$ gameBoard.changeSnakeDirection(1)) $\lor$ (e = down button $\implies$ gameBoard.changeSnakeDirection(2)) $\lor$ (e = right button $\implies$ gameBoard.changeSnakeDirection(3)) $\lor$ (e = left button $\implies$ gameBoard.changeSnakeDirection(4)) $\lor$ (e = space $\land$ gameBoard.isGameRunning()=true $\implies$ gameBoard.pauseGame()) $\lor$ (e = space $\land$ gameBoard.isGameRunning()=false $\implies$ gameBoard.startGame()) $\lor$ (e = esc $\implies$ exit the game.)
+\item ouput := None
+\item exception: None\\
+\end{itemize}
+
+%%%%%%%%%
+\noindent DrawSnake(a):
+\begin{itemize}
+\item Input: snake object
+\item draws the snake corresponding to the current state to the output window
+\item exception: None\\
+\end{itemize}
+
+\noindent DrawMap(a):
+\begin{itemize}
+\item Input: None
+\item draws the map corresponding to the map constant to the output windows
+\item exception: None\\
+\end{itemize}
+
+\noindent DrawSnakeFood(a):
+\begin{itemize}
+\item Input: food
+\item draws the snake food corresponding to the current food state to the map
+\item exception: None\\
+\end{itemize}
+
+
+\noindent DrawStatusbar():
+\begin{itemize}
+\item Input: None
+\item Draws the instructions, Show playscore, (Game over $\implies$ "Game over message at center")
+\item exception: None\\
+\end{itemize}
+%%%%%%%%%%
+
+
+\end{document}
+
+
